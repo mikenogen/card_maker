@@ -19,6 +19,14 @@ let size60px = document.getElementById(`size60px`)
 let size80px = document.getElementById(`size80px`)
 //Paragrah Size Text
 let sizeParagraph = document.getElementById(`sizeParagraph`)
+//Text Box
+let textBox = document.getElementById(`textBox`)
+//Color Picker
+let backgroundColorPicker = document.getElementById(`backgroundColorPicker`)
+//Text Color Picker
+let textColorPicker = document.getElementById(`textColorPicker`)
+//Font Size Slider
+let fontSizeSlider = document.getElementById(`fontSizeSlider`)
 
 //Text Buttons
 bdButton.addEventListener(`click`, showBirthday)
@@ -37,6 +45,14 @@ blueTxtColor.addEventListener(`click`, showBlueTxt)
 size40px.addEventListener(`click`, show40px)
 size60px.addEventListener(`click`, show60px)
 size80px.addEventListener(`click`, show80px)
+//Text Box
+textBox.addEventListener(`input`, showText)
+//Color Picker
+backgroundColorPicker.addEventListener(`input`, showbackgroundColor)
+//Text Color Picker
+textColorPicker.addEventListener(`input`, showTextColor)
+//Font Size Slider
+fontSizeSlider.addEventListener(`input`, showFontSizeSlider)
 
 //Text Functions
 function showBirthday() {
@@ -83,4 +99,21 @@ function show60px() {
 function show80px() {
     card.style.fontSize = `80px`
     sizeParagraph.innerHTML = `Font Size: 80 Pixels`
+}
+//Text Box Function
+function showText() {
+    card.innerHTML = textBox.value
+  }
+//Color Picker Function
+function showbackgroundColor() {
+    card.style.backgroundColor = backgroundColorPicker.value
+}
+//Text Color Picker Function
+function showTextColor() {
+    card.style.color = textColorPicker.value
+}
+//Font Size Slider Function
+function showFontSizeSlider() {
+    card.style.fontSize = `${fontSizeSlider.value}px`
+    sizeParagraph.innerHTML = `Selected font size: ${fontSizeSlider.value} pixels`
 }
